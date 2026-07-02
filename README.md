@@ -256,7 +256,7 @@ plan.md                            # Internal planning doc (gitignored, not part
 | Agent never joins the room after dispatch | `agentName` in `ServerOptions` (`agent/src/agent.ts`) must exactly match the name passed to `AgentDispatchClient.createDispatch(...)` (`app/api/livekit/start/route.ts`) — both are `'scalekit-voice-agent'` currently. Also confirm the agent worker process (`npm run dev:agent`) is actually running. |
 | `/api/livekit/start` returns 500 "Missing LIVEKIT_URL..." | Fill `LIVEKIT_URL` / `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` in `.env.local` from your LiveKit Cloud project's Settings → Keys, then restart `npm run dev`. |
 | `/api/debug/tools` errors or returns an empty tool list | `SCALEKIT_*` env vars missing, or `TEST_IDENTIFIER` doesn't match an **Active** connection in the Scalekit AgentKit dashboard. |
-| Checked-in `.env.example` has vars this project doesn't use (Vapi keys, `SCALEKIT_MCP_CONFIG_ID`, etc.) | The file was originally copied from the Vapi sibling demo as a starting point and not fully trimmed. Only the eight vars in [Environment Variables](#environment-variables) above are read by this project's code — ignore the rest. |
+| `.env.example` has an unused `NEXT_PUBLIC_APP_URL` | Harmless leftover from the file's original scaffold. Only the eight vars in [Environment Variables](#environment-variables) above are actually read by this project's code. |
 | Agent speaks nothing, or a generic error, after asking about the calendar | Most likely `TEST_IDENTIFIER` / the dispatched `scalekitConnectionId` doesn't have an Active Google Calendar connection in Scalekit. Check `/api/debug/tools` for the identifier first. |
 
 ## Real-Key Validation Checklist

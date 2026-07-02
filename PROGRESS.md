@@ -58,7 +58,7 @@ Nothing here has been exercised against a live voice call, a live LiveKit room, 
 
 **Other observations**:
 
-- The checked-in `.env.example` was copied from the Vapi sibling demo as a starting point (per the original plan) and was never fully trimmed — it still carries Vapi-specific vars (`NEXT_PUBLIC_VAPI_PUBLIC_KEY`, `VAPI_PRIVATE_KEY`) and MCP-config vars (`SCALEKIT_MCP_CONFIG_ID`, `NEXT_PUBLIC_SCALEKIT_MCP_SERVER_URL`) that nothing in this project's code reads. This is noted as a gotcha in `README.md`'s troubleshooting table rather than fixed here, since cleaning it up is outside this task's scope (docs only) — a future task should trim it to the eight vars this project actually uses.
+- The checked-in `.env.example` was originally copied from the Vapi sibling demo and has since been trimmed to the eight vars this project actually reads; it still carries one harmless unused leftover (`NEXT_PUBLIC_APP_URL`), noted in `README.md`'s troubleshooting table.
 - The transcript panel in `app/page.tsx` only logs room-lifecycle events (participant joined/left, connected, errors) — there is no real spoken-transcript or data-channel wiring yet.
 - Only one function tool exists (`googlecalendar_list_events`); the identity-contract pattern generalizes to more Scalekit-backed tools, but nothing beyond calendar has been wired up or asked for.
 - `TEST_IDENTIFIER` / `NEXT_PUBLIC_TEST_SCALEKIT_CONNECTION_ID` are demo-only stand-ins for a real authenticated-user identifier.
@@ -68,13 +68,12 @@ Nothing here has been exercised against a live voice call, a live LiveKit room, 
 ## Next Steps (Prioritized)
 
 1. **Real-key validation** (highest priority, blocking "done"): a human with a real LiveKit Cloud project and live Scalekit credentials should run through `README.md`'s Real-Key Validation Checklist and record actual results here (this file currently has none, on purpose — no fabricated "tested successfully" claims).
-2. **Trim `.env.example`**: remove the stale Vapi/MCP vars that nothing in this codebase reads (see Gaps above).
-3. **Real user auth flow**: replace `TEST_IDENTIFIER` + the static `NEXT_PUBLIC_TEST_SCALEKIT_CONNECTION_ID` with an identifier derived from an authenticated user's session.
-4. **MCP migration**, once `@livekit/agents` ships MCP client support for Node — re-check the installed version's type declarations periodically; this is a "when the SDK catches up," not a "when we get around to it," item.
-5. **Multi-connector demo**: extend beyond `googlecalendar_list_events` to demonstrate the pattern generalizes (e.g. Gmail, Slack).
-6. **Real transcript / data-channel wiring**: replace the room-lifecycle log with actual spoken transcript text.
-7. **Telephony**: LiveKit supports SIP; this demo currently only wires up the browser/WebRTC path.
-8. **Publish**: push this repo to GitHub under `scalekit-developers` as `livekit-scalekit-voice-demo`, matching the Vapi sibling.
+2. **Real user auth flow**: replace `TEST_IDENTIFIER` + the static `NEXT_PUBLIC_TEST_SCALEKIT_CONNECTION_ID` with an identifier derived from an authenticated user's session.
+3. **MCP migration**, once `@livekit/agents` ships MCP client support for Node — re-check the installed version's type declarations periodically; this is a "when the SDK catches up," not a "when we get around to it," item.
+4. **Multi-connector demo**: extend beyond `googlecalendar_list_events` to demonstrate the pattern generalizes (e.g. Gmail, Slack).
+5. **Real transcript / data-channel wiring**: replace the room-lifecycle log with actual spoken transcript text.
+6. **Telephony**: LiveKit supports SIP; this demo currently only wires up the browser/WebRTC path.
+7. **Publish**: push this repo to GitHub under `scalekit-developers` as `livekit-scalekit-voice-demo`, matching the Vapi sibling.
 
 ---
 
@@ -83,7 +82,7 @@ Nothing here has been exercised against a live voice call, a live LiveKit room, 
 ```bash
 cd livekit-scalekit-voice-demo
 npm install
-cp .env.example .env.local   # fill Scalekit + LiveKit Cloud keys (ignore stale Vapi/MCP vars — see Gaps)
+cp .env.example .env.local   # fill in real Scalekit + LiveKit Cloud values
 
 # Terminal 1
 npm run dev
