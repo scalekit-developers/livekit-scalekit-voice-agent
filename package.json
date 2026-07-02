@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "dev:agent": "tsx watch agent/src/agent.ts dev",
+    "dev:agent": "tsx watch --env-file=.env.local agent/src/agent.ts dev",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
