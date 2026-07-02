@@ -164,7 +164,7 @@ User hears the calendar events read out loud (via LiveKit Inference TTS)
 
 ## Prerequisites
 
-- Node 18+
+- Node 20.11+ (the agent worker uses `import.meta.filename`, added in Node 20.11 / 21.2)
 - A LiveKit Cloud project (Settings → Keys for `LIVEKIT_URL` / `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET`)
 - A Scalekit environment with AgentKit enabled
 - A Google account you can connect to Scalekit for testing (the identifier you'll use)

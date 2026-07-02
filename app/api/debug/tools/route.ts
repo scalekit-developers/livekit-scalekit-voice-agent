@@ -5,7 +5,7 @@ export async function GET() {
   const identifier =
     process.env.TEST_IDENTIFIER ||
     process.env.NEXT_PUBLIC_TEST_SCALEKIT_CONNECTION_ID ||
-    'demo';
+    'demo-connection';
 
   try {
     let scopedTools: unknown[] = [];
