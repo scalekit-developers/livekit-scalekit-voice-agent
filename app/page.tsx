@@ -115,7 +115,7 @@ export default function LiveKitScalekitDemo() {
         </div>
 
         <div className="mt-4 text-[10px] text-zinc-400">
-          <span className="font-medium text-zinc-300">Try saying (examples):</span> &quot;What&apos;s on my calendar?&quot;, &quot;Find emails from Acme&quot;, &quot;Summarize #product on Slack&quot;, &quot;Show my open PRs&quot;, &quot;Find the roadmap doc and email it&quot;
+          <span className="font-medium text-zinc-300">Try saying (examples):</span> &quot;What&apos;s on my calendar today?&quot;, &quot;Do I have any meetings tomorrow?&quot;, &quot;List my upcoming events&quot;
         </div>
       </div>
 
