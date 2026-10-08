@@ -4,6 +4,8 @@ A focused prototype showing how to combine **LiveKit Agents** (real-time voice A
 
 **Goal of this project**: let a voice agent speak naturally and then securely perform real actions (e.g. list Google Calendar events) on behalf of an authenticated user — without ever exposing raw OAuth tokens to the LLM or the voice platform.
 
+Scalekit provides auth and actions on behalf of users, with 500+ connectors and 20,000+ tools.
+
 > **Repo status**: this project currently lives inside a monorepo checkout at `ecosystem/livekit-scalekit-voice-demo/`, but it is its own standalone git repository (own history, own commits) and is intended to be pushed directly to GitHub under `scalekit-developers` as `livekit-scalekit-voice-demo` — the same way its sibling `vapi-scalekit-voice-demo` was published.
 
 > **Not yet run against real credentials.** This entire build was done without a real LiveKit Cloud project, live Scalekit credentials, or the `lk` CLI installed. Every check so far is static — `npm run typecheck` / `lint` / `build`, plus manual reading of the installed SDK's type declarations to confirm the API calls are real and correctly shaped. Nothing here has been exercised against a live voice call, a live LiveKit room, or a live Scalekit connection. See [Real-Key Validation Checklist](#real-key-validation-checklist) before treating this as "done."
