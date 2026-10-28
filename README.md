@@ -4,7 +4,7 @@ A focused prototype showing how to combine **LiveKit Agents** (real-time voice A
 
 **Goal of this project**: let a voice agent speak naturally and then securely perform real actions (e.g. list Google Calendar events) on behalf of an authenticated user — without ever exposing raw OAuth tokens to the LLM or the voice platform.
 
-Scalekit provides auth and actions on behalf of users, with 500+ connectors and 20,000+ tools.
+Scalekit provides auth and actions on behalf of users, with 600+ connectors and 35,000+ tools.
 
 > **Repo status**: this project currently lives inside a monorepo checkout at `ecosystem/livekit-scalekit-voice-demo/`, but it is its own standalone git repository (own history, own commits) and is intended to be pushed directly to GitHub under `scalekit-developers` as `livekit-scalekit-voice-demo` — the same way its sibling `vapi-scalekit-voice-demo` was published.
 
